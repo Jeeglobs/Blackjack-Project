@@ -1,0 +1,29 @@
+classes
+
+Card
+-attributes
+    -suit
+    -rank
+-methods
+    -draw
+
+Deck
+-cards
+-shuffle
+-dreal card
+
+Player
+-name
+-is it their turn?
+-cards in hand
+    -score(value of cards)
+-hit or stay
+
+Dealer
+-name
+-is it their turn?
+-hit or stay (follow set rules)
+
+Game
+-winner/loser
+-in progress/finished
