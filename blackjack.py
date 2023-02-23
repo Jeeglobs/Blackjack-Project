@@ -12,9 +12,6 @@ class Card:
     def __str__(self):
         return f'{self.rank}{self.suit}'
 
-    # def get_rank(self):
-    #     return self.rank
-
 
 class Deck:
     def __init__(self):
@@ -63,7 +60,16 @@ class Dealer():
 
     def __str__(self):
         return f'{self.name} is the dealer'
-        # will probably not use this, so will delete eventually
+        # will probably not use this -- may delete eventually
+
+    def view_cards_start(self):
+        for card in self.hand:
+            if card == self.hand[0]:
+                print("???")
+            else:
+                print(card)
+
+    # How do I make the cards print horizontally instead of vertically???
 
     def view_cards(self):
         for card in self.hand:
@@ -72,10 +78,6 @@ class Dealer():
     def turn(self):
         # dealer's turn will be different from player's turn per the rules
         pass
-
-    # def end_game(self):
-    #     # may need this for player as well???
-    #     pass
 
 
 class Game:
@@ -87,21 +89,23 @@ class Game:
 
     def deal_cards(self):
         self.deck.shuffle()
-
-        # print(new_game.player)
-
+        # shuffle the deck
         self.deck.deal_card_player()
         self.deck.deal_card_player()
-
+        # deal two cards to the player
         self.deck.deal_card_dealer()
         self.deck.deal_card_dealer()
-
+        # deal two cards to the dealer
         print("\n" + self.dealer.name + "'s Cards:")
-        self.dealer.view_cards()
-
+        self.dealer.view_cards_start()
+        # show dealers hand
+        # need to only show first card in dealer's hand somehow
+        # make new function and rename view_cards to reveal_cards???
         print("\n" + self.player.name + "'s Cards:")
+        # print(self.player.hand)
+        # how do I make the cards show side-by-side instead of printed one at a time???
         self.player.view_cards()
-        # need to only show first card in dealer's hand somehow; make new function and rename view_cards to reveal_cards???
+        # show player's hand
 
 
 new_game = Game()
