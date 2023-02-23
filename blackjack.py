@@ -1,4 +1,5 @@
 class Card:
+
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
@@ -8,19 +9,29 @@ class Card:
 
 
 class Deck:
-    SUITS = ['♠️', '♣️', '♥️', '♦️']
-    RANKS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
 
     def __init__(self):
         self.cards = []
 
-        def add_cards(self):
-            for suit in SUITS:
-                for rank in RANKS:
-                    self.cards.append(Card(suit, rank))
+    def add_cards(self):
+        for suit in SUITS:
+            for rank in RANKS:
+                self.cards.append(Card(suit, rank))
+
+    def add_cards(self):
+        
+
+
+class Player:
+    pass
+
+
+class Dealer:
+    pass
 
 
 class Game:
+
     def __init__(self, player, dealer, deck):
         self.player = None
         self.dealer = None
