@@ -40,6 +40,7 @@ class Player:
     def __init__(self):
         self.name = input("Enter your name: ")
         self.hand = []
+        self.score = 0
 
     def __str__(self):
         return f'{self.name} is playing'
@@ -57,6 +58,7 @@ class Dealer():
     def __init__(self):
         self.name = 'Dealer'
         self.hand = []
+        self.score = 0
 
     def __str__(self):
         return f'{self.name} is the dealer'
@@ -87,6 +89,7 @@ class Game:
         self.dealer = Dealer()
         self.deck = Deck()
 
+    # Pretty sure this entire method should be in the deck class
     def deal_cards(self):
         self.deck.shuffle()
         # shuffle the deck
