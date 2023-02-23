@@ -27,6 +27,16 @@ class Deck:
     def shuffle(self):
         random.shuffle(self.cards)
 
+    def deal_opening_hands(self):
+        self.shuffle()
+        # shuffle the deck
+        self.deal_card_player()
+        self.deal_card_player()
+        # deal two cards to the player
+        self.deal_card_dealer()
+        self.deal_card_dealer()
+        # deal two cards to the dealer
+
     def deal_card_player(self):
         card = self.cards.pop()
         new_game.player.hand.append(card)
@@ -48,6 +58,9 @@ class Player:
     def view_cards(self):
         for card in self.hand:
             print(card)
+
+    def calculate_score(self):
+        pass
 
     def turn(self):
         # player decides how many times to hit before staying
@@ -77,6 +90,9 @@ class Dealer():
         for card in self.hand:
             print(card)
 
+    def calculate_score(self):
+        pass
+
     def turn(self):
         # dealer's turn will be different from player's turn per the rules
         pass
@@ -91,19 +107,12 @@ class Game:
 
     # Pretty sure this entire method should be in the deck class
     def deal_cards(self):
-        self.deck.shuffle()
-        # shuffle the deck
-        self.deck.deal_card_player()
-        self.deck.deal_card_player()
-        # deal two cards to the player
-        self.deck.deal_card_dealer()
-        self.deck.deal_card_dealer()
-        # deal two cards to the dealer
+        self.deck.deal_opening_hands()
+
         print("\n" + self.dealer.name + "'s Cards:")
         self.dealer.view_cards_start()
         # show dealers hand
-        # need to only show first card in dealer's hand somehow
-        # make new function and rename view_cards to reveal_cards???
+        # make new Dealer method reveal_cards???
         print("\n" + self.player.name + "'s Cards:")
         # print(self.player.hand)
         # how do I make the cards show side-by-side instead of printed one at a time???
