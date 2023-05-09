@@ -124,3 +124,10 @@ new_game = Game()
 # calls the Game class's init method
 new_game.deal_cards()
 # tells the game to tell its deck to shuffle itself
+
+# CHECK TO SEE IF DEALER HAS 21
+# CHECK TO SEE IF PLAYER HAS 21
+# END GAME IF EITHER/BOTH HAVE 21
+
+# PLAYER TURN
+# DEALER TURN
